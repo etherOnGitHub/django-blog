@@ -6,7 +6,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 # Create your models here.
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, max_length=200)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='blog_posts'
         )  # Link to User model
