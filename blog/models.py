@@ -29,5 +29,7 @@ class Comment(models.Model):
     class Meta:
         ordering = ["created_on"]
     def __str__(self):
-            return f"{self.title} | written by {self.author}"
+        max_length = 60
+        body_display = (self.body[:max_length] + '...') if len(self.body) > max_length else self.body
+        return f"{body_display} | written by {self.author}"
 
