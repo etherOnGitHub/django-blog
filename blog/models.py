@@ -32,4 +32,3 @@ class Comment(models.Model):
         max_length = 60
         body_display = (self.body[:max_length] + '...') if len(self.body) > max_length else self.body
         return f"{body_display} | written by {self.author}"
-
